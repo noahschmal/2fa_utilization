@@ -1,0 +1,29 @@
+{
+  "name": "2fa_utilization",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.18.1",
+    "method-override": "^3.0.0",
+    "nodemailer": "^6.9.16",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "qrcode": "^1.5.4",
+    "speakeasy": "^2.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.7",
+    "nodemon": "^3.1.7"
+  }
+}

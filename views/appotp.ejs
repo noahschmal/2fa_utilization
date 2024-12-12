@@ -1,0 +1,9 @@
+<h1>Please enter the code in your authenticator app</h1>
+<img src="<%= qr %>"/>
+<form action="/appotp" method="POST">
+    <div>
+        <label for="otp">Code</label>
+        <input type="text" id="otp" name="otp" required>
+    </div>
+    <button type="submit">Submit</button>
+</form>
