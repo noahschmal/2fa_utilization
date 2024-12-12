@@ -1,9 +1,29 @@
-<h1>Please enter the code in your authenticator app</h1>
-<img src="<%= qr %>"/>
-<form action="/appotp" method="POST">
-    <div>
-        <label for="otp">Code</label>
-        <input type="text" id="otp" name="otp" required>
+<head>
+    <title>HTML Login Form</title>
+    <link href="/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="main">
+        <h1>Two Factor Authentication</h1>
+        <h3>Please enter the code from your app</h3>
+
+        <img src="<%= qr %>"/>
+
+        <form action="/appotp" method="POST">
+            <label for="otp">
+                Code:
+            </label>
+            <input type="text" id="otp" name="otp" 
+                placeholder="Enter your Code" required>
+
+            <div class="wrap">
+                <button type="submit">
+                    Submit
+                </button>
+            </div>
+        </form>
     </div>
-    <button type="submit">Submit</button>
-</form>
+</body>
+
+</html>

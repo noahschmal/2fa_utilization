@@ -1,16 +1,46 @@
-<h1>Login</h1>
 <% if (messages.error) { %>
     <%= messages.error %>
 <% } %>
-<form action="/login" method="POST">
-    <div>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+<head>
+    <title>HTML Login Form</title>
+    <link href="/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="main">
+        <h1>CptS 327 Project</h1>
+        <h3>Enter your login credentials</h3>
+
+        <form action="/login" method="POST">
+            <label for="first">
+                Email:
+            </label>
+            <input type="email" id="email" name="email" 
+                placeholder="Enter your Email" required>
+
+            <label for="password">
+                Password:
+            </label>
+            <input type="password" id="password" name="password" 
+                placeholder="Enter your Password" required>
+
+            <% if (messages.error) { %>
+                <%= messages.error %>
+            <% } %>
+
+            <div class="wrap">
+                <button type="submit">
+                    Login
+                </button>
+            </div>
+        </form>
+        
+        <p>Not registered?
+            <a href="/register" style="text-decoration: none;">
+                Create an account
+            </a>
+        </p>
     </div>
-    <div>
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
-    </div>
-    <button type="submit">Login</button>
-</form>
-<a href="/register">Register</a>
+</body>
+
+</html>

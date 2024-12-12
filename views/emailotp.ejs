@@ -1,8 +1,27 @@
-<h1>Please enter the code sent to your email</h1>
-<form action="/emailotp" method="POST">
-    <div>
-        <label for="otp">Code</label>
-        <input type="text" id="otp" name="otp" required>
+<head>
+    <title>HTML Login Form</title>
+    <link href="/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="main">
+        <h1>Two Factor Authentication</h1>
+        <h3>Please enter the code sent to your email</h3>
+
+        <form action="/emailotp" method="POST">
+            <label for="otp">
+                Code:
+            </label>
+            <input type="text" id="otp" name="otp" 
+                placeholder="Enter your Code" required>
+
+            <div class="wrap">
+                <button type="submit">
+                    Submit
+                </button>
+            </div>
+        </form>
     </div>
-    <button type="submit">Submit</button>
-</form>
+</body>
+
+</html>
