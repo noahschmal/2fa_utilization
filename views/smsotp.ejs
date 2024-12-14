@@ -1,0 +1,42 @@
+<head>
+    <title>HTML Login Form</title>
+    <link href="/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="main">
+        <h1>Two Factor Authentication</h1>
+
+        <form action="/smsotpsend" method="POST">
+            <label for="phone">
+                Please enter your phone number:
+            </label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}"
+                placeholder="Enter your Code" required>
+
+            <div class="wrap">
+                <button type="submit">
+                    Send
+                </button>
+            </div>
+        </form>
+
+        <h3>Please enter the code sent to your phone</h3>
+
+        <form action="/smsotp" method="POST">
+            <label for="otp">
+                Code:
+            </label>
+            <input type="text" id="otp" name="otp" 
+                placeholder="Enter your Code" required>
+
+            <div class="wrap">
+                <button type="submit">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

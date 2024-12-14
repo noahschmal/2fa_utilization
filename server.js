@@ -22,10 +22,13 @@ initializePassport(
 
 // otp global
 let otp = 3;
+let phone = 3;
 
 // Requiring otp files
 const emailOTP = require('./emailotp')
 const generate_secret_key = require("./generate_secret_key");
+const smsOTP = require('./smsotp')
+const checkSMS = require('./checksmsotp')
 
 // Setting users up to a local empty array
 const users = []
@@ -120,6 +123,23 @@ app.post('/appotp', checkAuthenticated, (req, res) => {
         res.redirect('/')
     }
     console.log("Incorrect Code")
+})
+
+// Routing for SMS authentication
+app.get('/smsotp', checkAuthenticated, (req, res) => {
+    res.render('smsotp.ejs')
+})
+
+app.post('/smsotpsend', checkAuthenticated, (req, res) => {
+    phone = req.body.phone
+    smsOTP(req.body.phone)
+})
+
+app.post('/smsotp', checkAuthenticated, (req, res) => {
+    if (checkSMS(req.body.otp, phone)) {
+        res.redirect('/')
+    }
+    console.log("Incorrect Code: " + otp)
 })
 
 // Logout function
